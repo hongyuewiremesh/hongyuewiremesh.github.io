@@ -1,0 +1,6 @@
+index 370*342
+product 270*341
+single 635*491 102*102
+proddetails-detial-wrap
+<div class="fix">
+detial-cont-tabscont
