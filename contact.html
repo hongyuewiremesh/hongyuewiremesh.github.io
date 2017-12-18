@@ -97,7 +97,33 @@
     <section id="googleMapRow" class="row">
         <div class="row m0" id="mapBox"></div>
     </section>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1krNwfnLBL172mSs5v2zeO2efuqUM81s&callback=initMap">
+    </script>
+    <script>
+        function initMap() {
+            var uluru = { lat: 38.351242, lng: 115.0569932 };
+            var map = new google.maps.Map(document.getElementById('mapBox'), {
+                zoom: 10,
+                center: uluru
+            });
+            var contentString =
+                '<div>' +
+                '<h5>Hongyue Wire Mesh</h5>' +
+                '<p>South Shahe Bridg Dingzhou City Hebei China.</p>'  +
+                '</div>';
     
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                title: 'Uluru (Ayers Rock)'
+            });
+            $('#map').ready(infowindow.open(map, marker))
+        }
+    </script>
     <section id="contactRow" class="row contentRowPad">
         <div class="container">
             <div class="row">
@@ -275,8 +301,8 @@
     <!--Strella JS-->
     <script src="js/furniture.js"></script>
     
-    <!--Google Map JS-->
-    <script src="js/google-map.js"></script>
+    <!--Google Map JS    <script src="js/google-map.js"></script>-->
+
     
     <!--Contact JS-->
     <script src="js/contact.js"></script>
